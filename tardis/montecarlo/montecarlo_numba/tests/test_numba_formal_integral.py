@@ -1,6 +1,6 @@
 import pytest
 import numpy as np
-from tardis import constants as c
+from tardis import constants as const
 
 from copy import deepcopy
 import numpy.testing as ntest
@@ -57,7 +57,7 @@ TESTDATA = [
 @pytest.fixture(scope="function", params=TESTDATA)
 def formal_integral_model(request):
     r = request.param["r"]
-    model = NumbaModel(r[:-1], r[1:], r[:-1], r[1:], 1 / c.c.cgs.value)
+    model = NumbaModel(r[:-1], r[1:], r[:-1], r[1:], 1 / const.c.cgs.value)
     return model
 
 

@@ -1,6 +1,6 @@
 import pytest
 import numpy as np
-from tardis import constants as c
+from tardis import constants as const
 from astropy import units as u
 
 from copy import deepcopy
@@ -117,7 +117,7 @@ def formal_integral_model(request):
     This gets the Numba model to be used in later tests
     """
     r = request.param["r"]
-    model = NumbaModel(r[:-1], r[1:], r[:-1], r[1:], 1 / c.c.cgs.value)
+    model = NumbaModel(r[:-1], r[1:], r[:-1], r[1:], 1 / const.c.cgs.value)
     return model
 
 
